@@ -17,5 +17,5 @@ jobs:
         run: docker build -t oladockuser/portofolio .
       - name: Push image
         run:  
-              docker login -u oladockuser -p ${{secret.REGISTRY_PASS}}
+              docker login -u oladockuser -p ${{secrets.REGISTRY_PASS}}
               docker push oladockuser/portofolio
