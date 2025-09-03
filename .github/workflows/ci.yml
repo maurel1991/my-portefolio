@@ -14,8 +14,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Build image
-        run: docker build -t oladockuser/portofolio .
+        run: docker build -t secrets.USERNAME/portofolio .
       - name: Push image
         run: | 
-              docker login -u oladockuser -p ${{secrets.REGISTRY_PASS}}
-              docker push oladockuser/portofolio
+              docker login -u ${{secrets.USERNAME}} -p ${{secrets.REGISTRY_PASS}}
+              docker push secrets.USERNAME/portofolio
